@@ -1,0 +1,181 @@
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200&display=swap");
+
+body {
+  background-color: #171717;
+  margin: 0;
+  padding: 0;
+  font-family: "Titillium Web", sans-serif;
+  color: #ffffff;
+  overflow-y: scroll;
+}
+
+.App {
+  padding: 20px;
+}
+
+.header {
+  margin-top: 20px;
+  margin-bottom: 5px;
+  font-weight: 400;
+  font-style: normal;
+  text-align: left;
+  z-index: 1000;
+  background-color: #171717;
+  position: relative;
+}
+
+.nav-bar {
+  width: 100%;
+  height: auto;
+  margin-top: 10px;
+}
+
+.column {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+
+.column img {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  margin-bottom: 0px;
+  position: relative;
+}
+
+.column img::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: transparent;
+  transition: background 0.3s ease;
+}
+
+.column img.shadow-top::before {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+}
+
+.author {
+  margin-top: 5px;
+  text-align: left;
+  font-size: 24px;
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+}
+
+.left-align {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+}
+
+.right-align {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.back-image img,
+.header {
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.header h2 {
+  margin: 0;
+}
+
+.fixed-elements {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(
+    to bottom,
+    #171717 50%,
+    #171717 70%,
+    rgba(25, 20, 23, 0.4) 100%,
+    rgba(25, 20, 23, 0.5) 100%
+  );
+  box-shadow: 0px 5px 10px 30px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  z-index: 1000;
+  width: 100%;
+  border-bottom: none;
+}
+
+.left-align,
+.right-align {
+  display: flex;
+  align-items: center;
+}
+
+.back-image img,
+.right-align img {
+  width: 50px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.back-image img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  margin-right: 20px;
+}
+
+.search-container {
+  position: relative;
+}
+
+.search-input {
+  width: 150px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  border-color: #007bff;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 100px;
+}
+
+@media screen and (max-width: 768px) {
+  .photo-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .photo-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.no-data-found {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 20px;
+}
